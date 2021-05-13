@@ -18,7 +18,7 @@ public class RxDataPass {
 
     private BehaviorSubject<Class> startActivitySubject;
 
-    //Subscribe a string
+    //Subscribe a class object for start activity
     public BehaviorSubject<Class> getStartActivitySubject() {
         return startActivitySubject;
     }
