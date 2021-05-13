@@ -2,20 +2,21 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.1"
     defaultConfig {
-        applicationId "com.example.user.rates"
+        applicationId "com.liorkerenn.user.countries"
         minSdkVersion 15
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
 
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -36,17 +37,22 @@ android {
             manifest.srcFile 'src/main/AndroidManifest.xml'
         }
     }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+    implementation 'androidx.appcompat:appcompat:1.3.0-rc01'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.1.0-alpha09'
 
 
     implementation 'com.google.android.material:material:1.0.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.4.0-alpha06'
 
     //Dependency injection
     compileOnly 'javax.annotation:jsr250-api:1.0'
@@ -71,20 +77,12 @@ dependencies {
     //card view
     implementation "androidx.cardview:cardview:1.0.0"
 
-    //Room database
-    def room_version = "2.1.0"
-
-    implementation "androidx.room:room-runtime:$room_version"
-
-    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
-    // For Kotlin use kapt instead of annotationProcessor
-    // Test helpers
 
     //Image loader
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     // Required for local unit tests (JUnit 4 framework)
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 
     // Required for instrumented tests
     androidTestImplementation 'com.android.support:support-annotations:24.0.0'
@@ -98,5 +96,8 @@ dependencies {
     // Mockito in android Imp Tests
     androidTestImplementation 'com.google.dexmaker:dexmaker:1.2'
     androidTestImplementation 'com.google.dexmaker:dexmaker-mockito:1.2'
+
+    //For testing
+    implementation 'com.android.support:multidex:1.0.3'
 
 }

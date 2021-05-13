@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">Rates Revolut</string>
+    <string name="app_name">Neighbouring Country</string>
 
-    <string name="RatesScreenLabel">Rates</string>
-    <string name="action_settings">Settings</string>
+    <string name="sort_by_name">Sort by name</string>
+    <string name="sort_by_area">Sort by area</string>
+
+    <string name="CountriesScreenLabel" translatable="false">Countries</string>
+    <string name="action_settings" translatable="false">Settings</string>
+
+    <string name="native_name">Native Name:</string>
+    <string name="country_name">Country Name:</string>
 </resources>

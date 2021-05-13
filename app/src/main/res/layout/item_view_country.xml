@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.liorkerenn.user.myapplication.viewmodel.CountryItemViewmodel" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="@{viewmodel::onClick}"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/margin5"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginBottom="@dimen/margin8"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/native_name"
+                android:textColor="@color/DarkGray"
+                android:textSize="@dimen/currencyNameTextSize"
+                android:textStyle="bold"
+                android:typeface="sans"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:text="@{viewmodel.mModelObservable.nativeName}"
+                android:textSize="@dimen/currencyFullNameTextSize"
+                android:typeface="sans"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_weight="2"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/country_name"
+                android:textColor="@color/DarkGray"
+                android:textSize="@dimen/currencyNameTextSize"
+                android:textStyle="bold"
+                android:typeface="sans"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:text="@{viewmodel.mModelObservable.name}"
+                android:textSize="@dimen/currencyFullNameTextSize"
+                android:typeface="sans"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_weight="2"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -3,9 +3,10 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/black_overlay</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/BlueViolet</item>
+        <item name="actionBarStyle">@style/FullscreenActionBarStyle</item>
     </style>
 
     <declare-styleable name="vumeter_VuMeterView">
@@ -27,7 +28,7 @@
     </style>
 
     <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/black_overlay</item>
+        <item name="background">@color/black_overlay</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
